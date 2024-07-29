@@ -299,7 +299,10 @@ summary(leptodbfinal)
 <mark> Data -\> Manage variables in active dataset -\> Convert numeric
 variables to factors </mark>
 
-![](./pict/recodercmdr1.png) - In the dialogue window that opens up,
+![](./pict/recodercmdr1.png) 
+
+
+- In the dialogue window that opens up,
 select the above variables (hold the “shift” button to select more than
 one).
 
