@@ -1,0 +1,109 @@
+  Leptospirosis study, Menbulack village, East KZ governorate,
+         Aug 23-Aug27, 2004,Unmatched case-control study
+
+
+*IDENTIFYING INFORMATION
+
+QNO       ###
+STATUS    #              1=CASE 2=CONT 3=CONTNO BLOOD
+DODC      <DD.MM.YYYY>   DATE OF DATA COLLECTION
+NAME      <A           > FIRST LAST NAME
+DOB       <DD.MM.YYYY>   DATE OF BIRTH
+AGEY      ###.#               AGE IN YEARS
+ADDRESS   _______________     RESIDENCE VALUES ARE EITHER LOCALS OR VISITORS
+
+
+*EXPOSU RE DATA
+
+OCCUPT    _______________     OCCUPATION NOW
+PROFSN    _______________
+
+SOURCE OF DRINKING WATER
+     DRWSPRING #         1=YES 2=NO
+     DRWWELL   #         1=YES 2=NO
+
+SOURCE OF WATER FOR HOME USE (NOT FOR DRINKING)
+     HWSPRING  #         1 =YES 2=NO
+     HWWELL    #         1 =YES 2=NO
+     HWRIVER   #         1 =YES 2=NO
+
+*SWIMING EXPOSURES
+SWPOND    #              1 =YES 2=NO
+SWPONDW   <A>            R=RIVER B=OTHER
+DATESW    <DD.MM.YYYY>   DATE OF SWIMMING
+
+*HOME OWNED ANIMALS
+GOAT      <Y>
+SHEEP     <Y>
+COW       <Y>
+HOARSE    <Y>
+DOG       <Y>
+CAT       <Y>
+PIG       <Y>
+OTHER     __________________
+
+
+*CONTACT HISTORY BETWEEN JULY AND AUG 6
+GOAT6     <Y>
+SHEEP6    <Y>
+COW6      <Y>
+HOARSE6   <Y>
+DOG6      <Y>
+CAT6      <Y>
+PIG6      <Y>
+OTHER6    __________________
+
+*OTHER EXPOSURE
+WANIMCT6  <Y>            CONTACT WITH WILD ANIMALS
+HUNTNG6   <Y>            HUNTING
+HUNTNG6W  __________________  HUNTING WHERE
+CCONANIM  <Y>            CELL CONFINED ANIMALS
+FISHING6  <Y>
+FISHING6W __________________
+RISEFLD6W <Y>
+TRAVEL6   <Y>            TRAVEL IN THE STUDY PERIOD
+TRAVELW   __________________
+RATYARD   <Y>            RATS IN THE GARDEN
+RATHOME   <Y>            RATS INSIDE THE HOUSE
+
+CILLMAN   <Y>            CONTACT WITH AN ILL HUMAN
+
+
+
+*CLINICAL DATA
+DOS       <DD.MM.YYYY>   DATE OF ONSET
+DOH       <DD.MM.YYYY>   DATE OF HOSPITALIZATION
+DODIS     <DD.MM.YYYY>   DATE OF DISCHARGE
+OUTCOME   #              1=CURED 2=DIED 3=STILL UNDER TRETM 4=IMPROVEMENT
+HEADACHE  #              1=SEVERE 2=INTERMED 3=MILD 4=NO PAIN
+TEMP      ##.#
+CHILS     <Y>
+MYALGIA   <Y>
+MYALGIAW  __________________
+CALFMUSC  <Y>            PAIN IN THE CALF MUSCLES
+EYERED    <Y>
+LAPPET    <Y>            LOSS OF APPETITE
+MREGDT    <Y>            MUSCLE RIGIDITY
+MREGDTW   __________________  REGIDITY WHERE
+LIVEREN   <Y>            LIVER ENLARGEMENT
+LIVRTND   <Y>            LIVER TENDERNESS
+OTHER      ________________________________________
+
+
+
+*LABORATORY ANALYSIS
+HEMGLBN        ###.# HEAMOGLOBIN IN MMOLL
+LEUCOCYTES     ##.# IN 10 9
+*BIOCHEMISTRY
+ALT       ##.##     IN MMOLL
+ACT       ##.##     IN MMOLL
+TOTBILRBN ##.#      IN MMOLL
+*SSPINAL FLUID
+SSPFCELLS  ##.#     SSPSUG  ##.##       SSFPROT  ##.##
+MCPBLDLP  <Y>            LEPTOSPIRA IN THE BLOOD
+OTHERLABT _________________________________________
+
+BLCOLSCD  <DD.MM.YYYY>   DATE OF SECOND BLOOD SAMPLE
+
+
+

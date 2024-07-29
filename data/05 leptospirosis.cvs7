@@ -1,0 +1,678 @@
+﻿<DashboardCanvas>
+  <dashboardHelper>
+    <connectionString>zHDkaR2yI5Pbh2/LYHfZ7ljYKFwMFLb6TrxCvYEORi7csqJucXA0eUm4ILZ7oROEMK9ExrbsXMNadKCcDWilPF++aTXMGw3wr3v5L03PIOS6VjYdPEoMCkUYwnzhIHF0940BEtSmyfb3gIR1AWQ6NKlVXTwygdRTlg7OqAOVKVqd0jLtnM16YcNPFPSEoFzs63A3b77XiKMp7E6lGMtGoA7r+wf1JDhsMk6IRxOY/W84OOWw5b72zDzoHUBs00lCr3dZNeHbIKqqHR7T4o8aPEtHID4/Nu4mQH7VVfpbce0=</connectionString>
+    <databaseTypeIdentifier>EXCEL</databaseTypeIdentifier>
+    <tableName>Village cases only$</tableName>
+    <useAdvancedDataFilterCondition>False</useAdvancedDataFilterCondition>
+    <advancedDataFilterCondition>
+    </advancedDataFilterCondition>
+    <ReportId>5e40cd35-6c09-4725-a8e6-ed6e5e5b0745</ReportId>
+    <relatedDataConnections />
+    <dataFilters recordProcessScope="undeleted" />
+    <dashboardRules>
+      <rule ruleType="EpiDashboard.Rules.Rule_Recode">
+        <friendlyRule>Recode the values in AGEY to AGEGR</friendlyRule>
+        <sourceColumnName>AGEY</sourceColumnName>
+        <sourceColumnType>System.Double</sourceColumnType>
+        <destinationColumnName>AGEGR</destinationColumnName>
+        <destinationColumnType>System.String</destinationColumnType>
+        <tableColumns>3</tableColumns>
+        <elseValue>
+        </elseValue>
+        <shouldUseWildcards>False</shouldUseWildcards>
+        <shouldMaintainSortOrder>True</shouldMaintainSortOrder>
+        <recodeTable>
+          <recodeTableRow>
+            <recodeTableData>LOVALUE</recodeTableData>
+            <recodeTableData>0</recodeTableData>
+            <recodeTableData>LOVALUE - &amp;lt;0</recodeTableData>
+          </recodeTableRow>
+          <recodeTableRow>
+            <recodeTableData>0</recodeTableData>
+            <recodeTableData>10</recodeTableData>
+            <recodeTableData>0 - &amp;lt;10</recodeTableData>
+          </recodeTableRow>
+          <recodeTableRow>
+            <recodeTableData>10</recodeTableData>
+            <recodeTableData>20</recodeTableData>
+            <recodeTableData>10 - &amp;lt;20</recodeTableData>
+          </recodeTableRow>
+          <recodeTableRow>
+            <recodeTableData>20</recodeTableData>
+            <recodeTableData>30</recodeTableData>
+            <recodeTableData>20 - &amp;lt;30</recodeTableData>
+          </recodeTableRow>
+          <recodeTableRow>
+            <recodeTableData>30</recodeTableData>
+            <recodeTableData>40</recodeTableData>
+            <recodeTableData>30 - &amp;lt;40</recodeTableData>
+          </recodeTableRow>
+          <recodeTableRow>
+            <recodeTableData>40</recodeTableData>
+            <recodeTableData>50</recodeTableData>
+            <recodeTableData>40 - &amp;lt;50</recodeTableData>
+          </recodeTableRow>
+          <recodeTableRow>
+            <recodeTableData>50</recodeTableData>
+            <recodeTableData>60</recodeTableData>
+            <recodeTableData>50 - &amp;lt;60</recodeTableData>
+          </recodeTableRow>
+          <recodeTableRow>
+            <recodeTableData>60</recodeTableData>
+            <recodeTableData>70</recodeTableData>
+            <recodeTableData>60 - &amp;lt;70</recodeTableData>
+          </recodeTableRow>
+          <recodeTableRow>
+            <recodeTableData>70</recodeTableData>
+            <recodeTableData>80</recodeTableData>
+            <recodeTableData>70 - &amp;lt;80</recodeTableData>
+          </recodeTableRow>
+          <recodeTableRow>
+            <recodeTableData>80</recodeTableData>
+            <recodeTableData>90</recodeTableData>
+            <recodeTableData>80 - &amp;lt;90</recodeTableData>
+          </recodeTableRow>
+          <recodeTableRow>
+            <recodeTableData>90</recodeTableData>
+            <recodeTableData>99</recodeTableData>
+            <recodeTableData>90 - &amp;lt;99</recodeTableData>
+          </recodeTableRow>
+          <recodeTableRow>
+            <recodeTableData>99</recodeTableData>
+            <recodeTableData>HIVALUE</recodeTableData>
+            <recodeTableData>99 - &amp;lt; HIVALUE</recodeTableData>
+          </recodeTableRow>
+        </recodeTable>
+      </rule>
+      <rule ruleType="EpiDashboard.Rules.Rule_Recode">
+        <friendlyRule>Recode the values in TEMP to TEMP_RECODED</friendlyRule>
+        <sourceColumnName>TEMP</sourceColumnName>
+        <sourceColumnType>System.Double</sourceColumnType>
+        <destinationColumnName>TEMP_RECODED</destinationColumnName>
+        <destinationColumnType>System.String</destinationColumnType>
+        <tableColumns>3</tableColumns>
+        <elseValue>
+        </elseValue>
+        <shouldUseWildcards>False</shouldUseWildcards>
+        <shouldMaintainSortOrder>True</shouldMaintainSortOrder>
+        <recodeTable>
+          <recodeTableRow>
+            <recodeTableData>LOVALUE</recodeTableData>
+            <recodeTableData>36.9</recodeTableData>
+            <recodeTableData>LOVALUE - &amp;lt;37</recodeTableData>
+          </recodeTableRow>
+          <recodeTableRow>
+            <recodeTableData>37.0</recodeTableData>
+            <recodeTableData>37.4</recodeTableData>
+            <recodeTableData>37.0 - &amp;lt;37.5</recodeTableData>
+          </recodeTableRow>
+          <recodeTableRow>
+            <recodeTableData>37.5</recodeTableData>
+            <recodeTableData>37.9</recodeTableData>
+            <recodeTableData>37.5 - &amp;lt;38</recodeTableData>
+          </recodeTableRow>
+          <recodeTableRow>
+            <recodeTableData>38.0</recodeTableData>
+            <recodeTableData>38.4</recodeTableData>
+            <recodeTableData>38.0 - &amp;lt;38.5</recodeTableData>
+          </recodeTableRow>
+          <recodeTableRow>
+            <recodeTableData>38.5</recodeTableData>
+            <recodeTableData>38.9</recodeTableData>
+            <recodeTableData>38.5 - &amp;lt;39</recodeTableData>
+          </recodeTableRow>
+          <recodeTableRow>
+            <recodeTableData>39.0</recodeTableData>
+            <recodeTableData>39.4</recodeTableData>
+            <recodeTableData>39.0 - &amp;lt;39.5</recodeTableData>
+          </recodeTableRow>
+          <recodeTableRow>
+            <recodeTableData>39.5</recodeTableData>
+            <recodeTableData>39.9</recodeTableData>
+            <recodeTableData>39.5 - &amp;lt;40</recodeTableData>
+          </recodeTableRow>
+          <recodeTableRow>
+            <recodeTableData>40.0</recodeTableData>
+            <recodeTableData>40.4</recodeTableData>
+            <recodeTableData>40.0 - &amp;lt;40.5</recodeTableData>
+          </recodeTableRow>
+          <recodeTableRow>
+            <recodeTableData>40.5</recodeTableData>
+            <recodeTableData>40.9</recodeTableData>
+            <recodeTableData>40.5 - &amp;lt;41</recodeTableData>
+          </recodeTableRow>
+          <recodeTableRow>
+            <recodeTableData>41.0</recodeTableData>
+            <recodeTableData>HIVALUE</recodeTableData>
+            <recodeTableData>41.0 - &amp;lt; HIVALUE</recodeTableData>
+          </recodeTableRow>
+        </recodeTable>
+      </rule>
+    </dashboardRules>
+  </dashboardHelper>
+  <Gadgets>
+    <histogramChartGadget top="984" left="338" collapsed="false" gadgetType="EpiDashboard.Gadgets.Charting.HistogramChartGadget" id="4020ef3c-7549-4c7a-9039-1dcf5e4b136d" actualHeight="585.4">
+      <dataFilters recordProcessScope="undeleted" />
+      <mainVariable>DOS</mainVariable>
+      <secondYVarType>0</secondYVarType>
+      <height>500</height>
+      <width>800</width>
+      <allValues>False</allValues>
+      <showListLabels>False</showListLabels>
+      <sort />
+      <includeMissing>False</includeMissing>
+      <customHeading>Epi Curve Chart</customHeading>
+      <customDescription>
+      </customDescription>
+      <customCaption>
+      </customCaption>
+      <useDiffBarColors>False</useDiffBarColors>
+      <useRefValues>True</useRefValues>
+      <showAnnotations>False</showAnnotations>
+      <y2showAnnotations>False</y2showAnnotations>
+      <showGridLines>True</showGridLines>
+      <composition>0</composition>
+      <barSpace>1</barSpace>
+      <orientation>0</orientation>
+      <palette>12</palette>
+      <paletteColor1>#FFDF191E</paletteColor1>
+      <paletteColor2>#FFF56F06</paletteColor2>
+      <paletteColor3>#FFFFCC00</paletteColor3>
+      <paletteColor4>#FFFFF600</paletteColor4>
+      <paletteColor5>#FFA8E319</paletteColor5>
+      <paletteColor6>#FF85BC00</paletteColor6>
+      <paletteColor7>#FF1CF1CE</paletteColor7>
+      <paletteColor8>#FF00BCE3</paletteColor8>
+      <paletteColor9>#FF0077E3</paletteColor9>
+      <paletteColor10>#FF4400E3</paletteColor10>
+      <paletteColor11>#FFA200E3</paletteColor11>
+      <paletteColor12>#FFEE66C4</paletteColor12>
+      <barType>0</barType>
+      <step>1</step>
+      <interval>day</interval>
+      <y2LineType>Polygon</y2LineType>
+      <y2LineDashStyle>Solid</y2LineDashStyle>
+      <y2LineThickness>2</y2LineThickness>
+      <yAxisLabel>Leptospirosis cases</yAxisLabel>
+      <yAxisLabelFontSize>12</yAxisLabelFontSize>
+      <xAxisLabelFontSize>12</xAxisLabelFontSize>
+      <yAxisFontSize>12</yAxisFontSize>
+      <xAxisFontSize>6</xAxisFontSize>
+      <yAxisFormatString>
+      </yAxisFormatString>
+      <y2AxisLabel>
+      </y2AxisLabel>
+      <y2AxisLegendTitle>
+      </y2AxisLegendTitle>
+      <y2AxisFormatString>
+      </y2AxisFormatString>
+      <xAxisLabelType>0</xAxisLabelType>
+      <xAxisLabel>Date of Onset</xAxisLabel>
+      <xAxisAngle>90</xAxisAngle>
+      <chartTitle>Leptospirosis by date of onset of symptoms, Kenkolat, Kazakhstan, July-August 2004</chartTitle>
+      <chartSubTitle>
+      </chartSubTitle>
+      <showLegend>False</showLegend>
+      <showLegendBorder>False</showLegendBorder>
+      <showLegendVarNames>False</showLegendVarNames>
+      <legendFontSize>12</legendFontSize>
+      <enddate>632295072000000000</enddate>
+      <startdate>632254464000000000</startdate>
+      <legendDock>1</legendDock>
+    </histogramChartGadget>
+    <histogramChartGadget top="1605" left="338" collapsed="false" gadgetType="EpiDashboard.Gadgets.Charting.HistogramChartGadget" id="28497366-d7fd-4152-9061-ba86e46b4147" actualHeight="631">
+      <dataFilters recordProcessScope="undeleted" />
+      <mainVariable>DOS</mainVariable>
+      <secondYVarType>0</secondYVarType>
+      <height>500</height>
+      <width>800</width>
+      <allValues>False</allValues>
+      <showListLabels>False</showListLabels>
+      <sort />
+      <includeMissing>False</includeMissing>
+      <customHeading>Epi Curve Chart</customHeading>
+      <customDescription>
+      </customDescription>
+      <customCaption>
+      </customCaption>
+      <useDiffBarColors>False</useDiffBarColors>
+      <useRefValues>True</useRefValues>
+      <showAnnotations>False</showAnnotations>
+      <y2showAnnotations>False</y2showAnnotations>
+      <showGridLines>True</showGridLines>
+      <composition>0</composition>
+      <barSpace>1</barSpace>
+      <orientation>0</orientation>
+      <palette>12</palette>
+      <paletteColor1>#FFDF191E</paletteColor1>
+      <paletteColor2>#FFF56F06</paletteColor2>
+      <paletteColor3>#FFFFCC00</paletteColor3>
+      <paletteColor4>#FFFFF600</paletteColor4>
+      <paletteColor5>#FFA8E319</paletteColor5>
+      <paletteColor6>#FF85BC00</paletteColor6>
+      <paletteColor7>#FF1CF1CE</paletteColor7>
+      <paletteColor8>#FF00BCE3</paletteColor8>
+      <paletteColor9>#FF0077E3</paletteColor9>
+      <paletteColor10>#FF4400E3</paletteColor10>
+      <paletteColor11>#FFA200E3</paletteColor11>
+      <paletteColor12>#FFEE66C4</paletteColor12>
+      <barType>0</barType>
+      <step>3</step>
+      <interval>day</interval>
+      <y2LineType>Polygon</y2LineType>
+      <y2LineDashStyle>Solid</y2LineDashStyle>
+      <y2LineThickness>2</y2LineThickness>
+      <yAxisLabel>Leptospirosis cases</yAxisLabel>
+      <yAxisLabelFontSize>12</yAxisLabelFontSize>
+      <xAxisLabelFontSize>12</xAxisLabelFontSize>
+      <yAxisFontSize>12</yAxisFontSize>
+      <xAxisFontSize>12</xAxisFontSize>
+      <yAxisFormatString>
+      </yAxisFormatString>
+      <y2AxisLabel>
+      </y2AxisLabel>
+      <y2AxisLegendTitle>
+      </y2AxisLegendTitle>
+      <y2AxisFormatString>
+      </y2AxisFormatString>
+      <xAxisLabelType>0</xAxisLabelType>
+      <xAxisLabel>Onset 3-day period beginning</xAxisLabel>
+      <xAxisAngle>-45</xAxisAngle>
+      <chartTitle>Leptospirosis by date of onset, Kenkolat, Kazakhstan, July-August 2004</chartTitle>
+      <chartSubTitle>onset by 3 day intervals</chartSubTitle>
+      <showLegend>False</showLegend>
+      <showLegendBorder>False</showLegendBorder>
+      <showLegendVarNames>False</showLegendVarNames>
+      <legendFontSize>12</legendFontSize>
+      <enddate>632295072000000000</enddate>
+      <startdate>632254464000000000</startdate>
+      <legendDock>1</legendDock>
+    </histogramChartGadget>
+    <meansGadget top="2246" left="338" collapsed="False" gadgetType="EpiDashboard.MeansControl" id="b15ea9ea-fdf2-4cc8-be30-cac5cbcd7e67" actualHeight="102">
+      <dataFilters recordProcessScope="undeleted" />
+      <mainVariable>AGEY</mainVariable>
+      <crosstabVariable>
+      </crosstabVariable>
+      <columnsToShow>1,2,3,4,5,6,7,8,9,10,11</columnsToShow>
+      <precision>1</precision>
+      <showANOVA>False</showANOVA>
+      <customHeading>Averages of age of leptospirosis cases</customHeading>
+      <customDescription>
+      </customDescription>
+      <customCaption>
+      </customCaption>
+      <anchorTop>28497366-d7fd-4152-9061-ba86e46b4147</anchorTop>
+    </meansGadget>
+    <frequencyGadget top="2358" left="338" collapsed="False" gadgetType="EpiDashboard.FrequencyControl" id="8cdb589d-17db-43b7-b706-23d652860124" actualHeight="150">
+      <dataFilters recordProcessScope="undeleted" />
+      <mainVariables>
+        <mainVariable>SEX</mainVariable>
+      </mainVariables>
+      <allValues>False</allValues>
+      <showListLabels>False</showListLabels>
+      <sort />
+      <includeMissing>False</includeMissing>
+      <useFieldPrompts>True</useFieldPrompts>
+      <drawBorders>True</drawBorders>
+      <drawHeaderRow>True</drawHeaderRow>
+      <drawTotalRow>True</drawTotalRow>
+      <precision>1</precision>
+      <rowsToDisplay />
+      <percentBarWidth>100</percentBarWidth>
+      <columnsToShow>1,2,3,6</columnsToShow>
+      <customHeading>Frequency of leptospirosis cases by sex</customHeading>
+      <customDescription>
+      </customDescription>
+      <customCaption>
+      </customCaption>
+      <anchorTop>b15ea9ea-fdf2-4cc8-be30-cac5cbcd7e67</anchorTop>
+    </frequencyGadget>
+    <meansGadget top="2545" left="335" collapsed="False" gadgetType="EpiDashboard.MeansControl" id="f89e1dcc-b77b-4a6d-8d25-c36c50131e6d" actualHeight="132">
+      <dataFilters recordProcessScope="undeleted" />
+      <mainVariable>AGEY</mainVariable>
+      <crosstabVariable>SEX</crosstabVariable>
+      <columnsToShow>1,2,3,4,5,6,7,8,9,10,11</columnsToShow>
+      <precision>1</precision>
+      <showANOVA>False</showANOVA>
+      <customHeading>Averages of age of leptospirosis by sex</customHeading>
+      <customDescription>
+      </customDescription>
+      <customCaption>
+      </customCaption>
+    </meansGadget>
+    <frequencyGadget top="2698" left="332" collapsed="False" gadgetType="EpiDashboard.FrequencyControl" id="8ab99ab2-70fd-4bef-99a7-c48f074a864a" actualHeight="410">
+      <dataFilters recordProcessScope="undeleted" />
+      <mainVariables>
+        <mainVariable>AGEGR</mainVariable>
+      </mainVariables>
+      <allValues>True</allValues>
+      <showListLabels>False</showListLabels>
+      <sort />
+      <includeMissing>False</includeMissing>
+      <useFieldPrompts>True</useFieldPrompts>
+      <drawBorders>True</drawBorders>
+      <drawHeaderRow>True</drawHeaderRow>
+      <drawTotalRow>True</drawTotalRow>
+      <precision>1</precision>
+      <rowsToDisplay />
+      <percentBarWidth>100</percentBarWidth>
+      <columnsToShow>1,2,6</columnsToShow>
+      <customHeading>Frequency of leptospirosis cases by age group</customHeading>
+      <customDescription>
+      </customDescription>
+      <customCaption>
+      </customCaption>
+    </frequencyGadget>
+    <crosstabGadget top="3118" left="332" collapsed="False" gadgetType="EpiDashboard.CrosstabControl" id="965b0ebe-faa8-4837-b79f-6c5507d30e27" actualHeight="489.8">
+      <dataFilters recordProcessScope="undeleted" />
+      <mainVariable>AGEGR</mainVariable>
+      <crosstabVariable>SEX</crosstabVariable>
+      <maxColumnNameLength>24</maxColumnNameLength>
+      <allValues>True</allValues>
+      <usepromptsforcolumnnames>False</usepromptsforcolumnnames>
+      <showListLabels>False</showListLabels>
+      <includeMissing>False</includeMissing>
+      <showStrataSummaryOnly>False</showStrataSummaryOnly>
+      <displayChiSquare>False</displayChiSquare>
+      <treatOutcomeAsContinuous>False</treatOutcomeAsContinuous>
+      <smartTable>True</smartTable>
+      <customHeading>Frequencies of leptospirosis case by age group and sex</customHeading>
+      <customDescription>
+      </customDescription>
+      <customCaption>
+      </customCaption>
+      <layoutMode>vertical</layoutMode>
+      <rowColPercents>True</rowColPercents>
+      <showHeatMap>False</showHeatMap>
+      <breakType>0</breakType>
+      <break1>0</break1>
+      <break2>20</break2>
+      <break3>40</break3>
+      <break4>60</break4>
+      <break5>80</break5>
+      <startColor>
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+      </startColor>
+      <endColor>
+        <red>255</red>
+        <green>99</green>
+        <blue>71</blue>
+      </endColor>
+      <OutcomeSwap>False</OutcomeSwap>
+      <ExposureSwap>False</ExposureSwap>
+      <anchorTop>8ab99ab2-70fd-4bef-99a7-c48f074a864a</anchorTop>
+    </crosstabGadget>
+    <columnChartGadget top="3637" left="151" collapsed="false" gadgetType="EpiDashboard.Gadgets.Charting.ColumnChartGadget" id="8089a9b2-a54b-43ad-8b42-5c4241036b81" actualHeight="585.4">
+      <dataFilters recordProcessScope="undeleted" />
+      <mainVariable>AGEGR</mainVariable>
+      <strataVariable>SEX</strataVariable>
+      <secondYVarType>0</secondYVarType>
+      <secondYVar>SEX</secondYVar>
+      <height>500</height>
+      <width>800</width>
+      <allValues>True</allValues>
+      <showListLabels>False</showListLabels>
+      <sort />
+      <includeMissing>False</includeMissing>
+      <customHeading>Leptospirosis cases by age group and sex, Kenkolat, Kazakhstan, July-August 2004</customHeading>
+      <customDescription>
+      </customDescription>
+      <customCaption>
+      </customCaption>
+      <useDiffBarColors>False</useDiffBarColors>
+      <useRefValues>True</useRefValues>
+      <showAnnotations>False</showAnnotations>
+      <y2showAnnotations>False</y2showAnnotations>
+      <showGridLines>True</showGridLines>
+      <composition>0</composition>
+      <barSpace>0</barSpace>
+      <orientation>0</orientation>
+      <palette>12</palette>
+      <paletteColor1>#FFDF191E</paletteColor1>
+      <paletteColor2>#FFF56F06</paletteColor2>
+      <paletteColor3>#FFFFCC00</paletteColor3>
+      <paletteColor4>#FFFFF600</paletteColor4>
+      <paletteColor5>#FFA8E319</paletteColor5>
+      <paletteColor6>#FF85BC00</paletteColor6>
+      <paletteColor7>#FF1CF1CE</paletteColor7>
+      <paletteColor8>#FF00BCE3</paletteColor8>
+      <paletteColor9>#FF0077E3</paletteColor9>
+      <paletteColor10>#FF4400E3</paletteColor10>
+      <paletteColor11>#FFA200E3</paletteColor11>
+      <paletteColor12>#FFEE66C4</paletteColor12>
+      <barType>2</barType>
+      <y2LineType>1</y2LineType>
+      <y2LineDashStyle>4</y2LineDashStyle>
+      <y2LineThickness>1</y2LineThickness>
+      <yAxisLabel>Leptospirosis cases</yAxisLabel>
+      <yAxisFormatString>
+      </yAxisFormatString>
+      <yAxisFrom>0</yAxisFrom>
+      <yAxisTo>0</yAxisTo>
+      <yAxisStep>0</yAxisStep>
+      <xAxisStartValue>
+      </xAxisStartValue>
+      <xAxisEndValue>90- &amp;lt;100</xAxisEndValue>
+      <sortStringValues>False</sortStringValues>
+      <y2AxisLabel>
+      </y2AxisLabel>
+      <y2AxisLegendTitle>
+      </y2AxisLegendTitle>
+      <y2AxisFormatString>
+      </y2AxisFormatString>
+      <xAxisLabelType>0</xAxisLabelType>
+      <xAxisLabel>Age group (years)</xAxisLabel>
+      <xAxisAngle>0</xAxisAngle>
+      <chartTitle>Leptospirosis cases by age group and sex, Kenkolat, Kazakhstan, July-August, 2004 </chartTitle>
+      <chartSubTitle>
+      </chartSubTitle>
+      <showLegend>True</showLegend>
+      <showLegendBorder>False</showLegendBorder>
+      <showLegendVarNames>True</showLegendVarNames>
+      <legendFontSize>12</legendFontSize>
+      <yAxisLabelFontSize>12</yAxisLabelFontSize>
+      <xAxisLabelFontSize>10</xAxisLabelFontSize>
+      <yAxisFontSize>12</yAxisFontSize>
+      <xAxisFontSize>12</xAxisFontSize>
+      <legendDock>1</legendDock>
+    </columnChartGadget>
+    <meansGadget top="4234" left="238" collapsed="False" gadgetType="EpiDashboard.MeansControl" id="e937273c-2572-4f9e-81bd-67a6be3229b9" actualHeight="102">
+      <dataFilters recordProcessScope="undeleted" />
+      <mainVariable>TEMP</mainVariable>
+      <crosstabVariable>
+      </crosstabVariable>
+      <columnsToShow>1,2,3,4,5,6,7,8,9,10,11</columnsToShow>
+      <precision>1</precision>
+      <showANOVA>False</showANOVA>
+      <customHeading>Averages of body temperature of leptospirosis cases</customHeading>
+      <customDescription>
+      </customDescription>
+      <customCaption>
+      </customCaption>
+    </meansGadget>
+    <frequencyGadget top="4346" left="238" collapsed="False" gadgetType="EpiDashboard.FrequencyControl" id="6a63132a-f35f-4821-bf5c-b17f6aa81866" actualHeight="1202">
+      <dataFilters recordProcessScope="undeleted" />
+      <mainVariables>
+        <mainVariable>HEADACHE</mainVariable>
+        <mainVariable>CHILS</mainVariable>
+        <mainVariable>CALFMUSC</mainVariable>
+        <mainVariable>MYALGIA</mainVariable>
+        <mainVariable>EYERED</mainVariable>
+        <mainVariable>LAPPET</mainVariable>
+        <mainVariable>MREGDT</mainVariable>
+        <mainVariable>LIVEREN</mainVariable>
+        <mainVariable>LIVRTND</mainVariable>
+        <mainVariable>MCPBLDLP</mainVariable>
+      </mainVariables>
+      <allValues>False</allValues>
+      <showListLabels>False</showListLabels>
+      <sort />
+      <includeMissing>False</includeMissing>
+      <useFieldPrompts>True</useFieldPrompts>
+      <drawBorders>True</drawBorders>
+      <drawHeaderRow>True</drawHeaderRow>
+      <drawTotalRow>True</drawTotalRow>
+      <precision>1</precision>
+      <rowsToDisplay />
+      <percentBarWidth>100</percentBarWidth>
+      <columnsToShow>1,2,6</columnsToShow>
+      <customHeading>Frequencies of clinical features</customHeading>
+      <customDescription>
+      </customDescription>
+      <customCaption>
+      </customCaption>
+      <anchorTop>e937273c-2572-4f9e-81bd-67a6be3229b9</anchorTop>
+    </frequencyGadget>
+    <columnChartGadget top="5585" left="181" collapsed="false" gadgetType="EpiDashboard.Gadgets.Charting.ColumnChartGadget" id="a3ac1a6b-79da-42e5-8480-7e34974bfdb3" actualHeight="557">
+      <dataFilters recordProcessScope="undeleted" />
+      <mainVariable>TEMP_RECODED</mainVariable>
+      <secondYVarType>0</secondYVarType>
+      <height>500</height>
+      <width>800</width>
+      <allValues>False</allValues>
+      <showListLabels>False</showListLabels>
+      <sort />
+      <includeMissing>False</includeMissing>
+      <customHeading>Frequencies of body temperature of leptospirosis cases</customHeading>
+      <customDescription>
+      </customDescription>
+      <customCaption>
+      </customCaption>
+      <useDiffBarColors>False</useDiffBarColors>
+      <useRefValues>True</useRefValues>
+      <showAnnotations>False</showAnnotations>
+      <y2showAnnotations>False</y2showAnnotations>
+      <showGridLines>True</showGridLines>
+      <composition>1</composition>
+      <barSpace>1</barSpace>
+      <orientation>0</orientation>
+      <palette>12</palette>
+      <paletteColor1>#FFDF191E</paletteColor1>
+      <paletteColor2>#FFF56F06</paletteColor2>
+      <paletteColor3>#FFFFCC00</paletteColor3>
+      <paletteColor4>#FFFFF600</paletteColor4>
+      <paletteColor5>#FFA8E319</paletteColor5>
+      <paletteColor6>#FF85BC00</paletteColor6>
+      <paletteColor7>#FF1CF1CE</paletteColor7>
+      <paletteColor8>#FF00BCE3</paletteColor8>
+      <paletteColor9>#FF0077E3</paletteColor9>
+      <paletteColor10>#FF4400E3</paletteColor10>
+      <paletteColor11>#FFA200E3</paletteColor11>
+      <paletteColor12>#FFEE66C4</paletteColor12>
+      <barType>2</barType>
+      <y2LineType>1</y2LineType>
+      <y2LineDashStyle>4</y2LineDashStyle>
+      <y2LineThickness>1</y2LineThickness>
+      <yAxisLabel>Leptospirosis cases</yAxisLabel>
+      <yAxisFormatString>
+      </yAxisFormatString>
+      <yAxisFrom>0</yAxisFrom>
+      <yAxisTo>0</yAxisTo>
+      <yAxisStep>0</yAxisStep>
+      <xAxisStartValue>
+      </xAxisStartValue>
+      <xAxisEndValue>
+      </xAxisEndValue>
+      <sortStringValues>False</sortStringValues>
+      <y2AxisLabel>
+      </y2AxisLabel>
+      <y2AxisLegendTitle>
+      </y2AxisLegendTitle>
+      <y2AxisFormatString>
+      </y2AxisFormatString>
+      <xAxisLabelType>0</xAxisLabelType>
+      <xAxisLabel>Degrees Celsius</xAxisLabel>
+      <xAxisAngle>0</xAxisAngle>
+      <chartTitle>
+      </chartTitle>
+      <chartSubTitle>
+      </chartSubTitle>
+      <showLegend>False</showLegend>
+      <showLegendBorder>False</showLegendBorder>
+      <showLegendVarNames>False</showLegendVarNames>
+      <legendFontSize>12</legendFontSize>
+      <yAxisLabelFontSize>12</yAxisLabelFontSize>
+      <xAxisLabelFontSize>12</xAxisLabelFontSize>
+      <yAxisFontSize>12</yAxisFontSize>
+      <xAxisFontSize>12</xAxisFontSize>
+      <legendDock>1</legendDock>
+    </columnChartGadget>
+    <meansGadget top="6236" left="197" collapsed="False" gadgetType="EpiDashboard.MeansControl" id="ed62d0ae-8980-4f66-ab40-447a3b79dee6" actualHeight="102">
+      <dataFilters recordProcessScope="undeleted" />
+      <mainVariable>TOTBILRBN</mainVariable>
+      <crosstabVariable>
+      </crosstabVariable>
+      <columnsToShow>1,2,3,4,5,6,7,8,9,10,11</columnsToShow>
+      <precision>2</precision>
+      <showANOVA>False</showANOVA>
+      <customHeading>Averages of serum total bilirubin</customHeading>
+      <customDescription>
+      </customDescription>
+      <customCaption>
+      </customCaption>
+    </meansGadget>
+    <meansGadget top="6348" left="197" collapsed="False" gadgetType="EpiDashboard.MeansControl" id="5e53b4aa-8016-4485-8ffa-2a785a4bf222" actualHeight="102">
+      <dataFilters recordProcessScope="undeleted" />
+      <mainVariable>ALT</mainVariable>
+      <crosstabVariable>
+      </crosstabVariable>
+      <columnsToShow>1,2,3,4,5,6,7,8,9,10,11</columnsToShow>
+      <precision>2</precision>
+      <showANOVA>True</showANOVA>
+      <customHeading>Means</customHeading>
+      <customDescription>
+      </customDescription>
+      <customCaption>
+      </customCaption>
+      <anchorTop>ed62d0ae-8980-4f66-ab40-447a3b79dee6</anchorTop>
+    </meansGadget>
+    <frequencyGadget top="6476" left="200" collapsed="False" gadgetType="EpiDashboard.FrequencyControl" id="09d68b80-3534-46ea-b380-74bfa854f971" actualHeight="150">
+      <dataFilters recordProcessScope="undeleted" />
+      <mainVariables>
+        <mainVariable>OUTCOME</mainVariable>
+      </mainVariables>
+      <allValues>False</allValues>
+      <showListLabels>False</showListLabels>
+      <sort />
+      <includeMissing>False</includeMissing>
+      <useFieldPrompts>True</useFieldPrompts>
+      <drawBorders>True</drawBorders>
+      <drawHeaderRow>True</drawHeaderRow>
+      <drawTotalRow>True</drawTotalRow>
+      <precision>1</precision>
+      <rowsToDisplay />
+      <percentBarWidth>100</percentBarWidth>
+      <columnsToShow>1,2,3,6</columnsToShow>
+      <customHeading>Frequency of Outcome </customHeading>
+      <customDescription>
+      </customDescription>
+      <customCaption>
+      </customCaption>
+    </frequencyGadget>
+  </Gadgets>
+  <OutputSettings>
+    <showCanvasSummaryInfo>True</showCanvasSummaryInfo>
+    <showGadgetHeadings>True</showGadgetHeadings>
+    <showGadgetSettings>True</showGadgetSettings>
+    <useAlternatingColors>False</useAlternatingColors>
+    <defaultChartWidth>800</defaultChartWidth>
+    <defaultChartHeight>500</defaultChartHeight>
+    <tableFontSize>13</tableFontSize>
+    <customHeading>
+    </customHeading>
+    <customSummary>
+    </customSummary>
+    <customConclusion>
+    </customConclusion>
+    <customTableFontFamily>
+    </customTableFontFamily>
+    <canvasHeight>8000</canvasHeight>
+    <sortGadgets>True</sortGadgets>
+  </OutputSettings>
+  <CanvasSettings>
+    <editMode>True</editMode>
+    <layoutMode>free</layoutMode>
+  </CanvasSettings>
+</DashboardCanvas>
