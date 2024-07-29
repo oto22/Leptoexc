@@ -1,8 +1,8 @@
 ---
 title: "Leptospirosis in Kazakhstan: Exercise in R" 
 output:
- # word_document:
-   html_document: 
+   word_document:
+  #html_document: 
     toc: true
     toc_depth: 3
     number_sections: true
@@ -13,8 +13,8 @@ params:
   echoftr: TRUE
   warnftr: TRUE
   msg: FALSE
-editor_options: 
-  markdown: 
+editor_options:
+  markdown:
     wrap: 72
 ---
 
@@ -69,7 +69,7 @@ ipak <- function(pkg){
   sapply(pkg, require, character.only = TRUE)
 }
 # indicaete package names
-packages <- c("tidyverse", "dplyr","readxl","lubridate","gtsummary",  "knitr", "flextable", "RcmdrMisc")
+packages <- c("tidyverse", "dplyr","readxl","lubridate","gtsummary",  "knitr", "Rcmdr", "flextable", "cardx")
 
 # use created function ipak and pass packages you wont to install and load
 ipak(packages)
@@ -190,11 +190,11 @@ colnames(vbnames) <- cnl
 kable(vbnames, row.names = F, caption = "Table 1. List of variables for Leptospirosis outbreak.")
 ```
 
-# Data management steps in R and R commander.
+# Data management steps.
 
 ## Import data into R.
 
-**To import data using R Commander you need to use following menu.**
+**Using Rcmdr point-and-click:**
 
 <mark> Data -\> Import data -\> From text file… </mark>
 
@@ -213,30 +213,26 @@ In the dialogue window that opens:
 
 ![](./pict/importrcmd1.png)
 
-**Import data using RStudio.**
+**Import data using R code.**
 
 ```{r importdatalepto, echo = params$echoftr}
 ## Import data from excel file.
-leptodb <- read_xlsx("../data/LeptospDBclean.xlsx",  sheet = "LeptoDB", na = "")  
+df <- read_xlsx("../data/LeptospDBclean.xlsx",  sheet = "LeptoDB", na = "NA")  
 ```
 
-### check the names of variables in your file in R commander and R.
+### check the names of variables in your file.
+
+**Using Rcmdr point-and-click:**
 
 <mark> Data -\> Active datasets -\> Variables in active dataset </mark>
 
 ![](./pict/wievnamesrcmdr.png)
 
-### Select variables from dataset for analysis.
+**Using R code :**
 
 ```{r}
-## assign names of leptodb to lptnms
-lptnms <- names(leptodb)
-## make all the names as lowercase
-lptnmsn <- tolower(lptnms)
-## rename leptodb dataset with with lower case names
-names(leptodb) <- lptnmsn 
 ## select all necessary variables from dataset
-leptodbfinal <- leptodb %>% select(id, status, sex, dob, address, occupation, profsn, drinkwaterspring, drinkwaterwell, homeusedwaterspring, homeusedwaterwell, homeusedwaterriver, swiminwaterpond, swiminwatertype, swimdate, ownedgoat, owndesheep, ownedcow, ownedhoarse, owneddog, ownedcat, ownedpig, contactgoataug6, contactsheepaug6, contactcowaug6, contacthoarseaug6, contactdogaug6, contactcataug6, contactpigaug6, wildanimaonctactaug6, fishingaug6, fishingaug6place, ratinyard, ratinhome, contactwithillpersons, dateofsymptoms, dateofhospitalization, datediagnosis, outcome, headache, fever, chils, myalgia, myalgiaw)
+names(df) 
 ```
 
 ### Delete variables form dataset
@@ -255,11 +251,11 @@ deleted.
 -   Delete variables code in R:
 
 ```{r}
-leptodbn <- leptodb %>% 
+leptodbfinal <- df %>% 
   select(-c(calfmusc, eyered, lappet, mregdt, liveren, livrtnd, mcpbldlp))
 ```
 
-### View the summary of your dataset in R or R commander?
+### View the summary of your dataset?
 
 <mark> Statistics -\> Summaries -\> Active dataset </mark>
 
@@ -285,6 +281,9 @@ colSums(is.na(leptodbfinal))
 </mark>
 
 ![](./pict/recodeNArcmdr.png)
+
+- in the recode variables window add appropirate 
+
 
 ```{r}
 ## replace all NA values to 0
@@ -413,7 +412,8 @@ Using Rcmdr point-and-click:
 
 ![](./pict/refreshrcmdrdatset.png)
 
-**This is only for R commander, RStudio does not require to refresh active dataset.**
+**This is only for R commander, RStudio does not require to refresh
+active dataset.**
 
 ## Save and export data into csv format
 
@@ -438,11 +438,9 @@ write.table(leptodbfinal, "../output/leptospirosis_clean.csv", sep=",", col.name
 
 -   Name your new data file as **Leptospcasen**
 
+![](./pict/subsetCases.png)
 
-![](./pict/subsetCases.png) 
-
-- Subset **Leptospcasen** using RStudio.
-
+-   Subset **Leptospcasen** using RStudio.
 
 ```{r recodetocategorical, echo = params$echoftr}
 ## Select only confirmed cases.
@@ -481,18 +479,20 @@ nlpcs <- NROW(Leptospcasen$id)
 
 <mark> Statistics -\> Summaries -\> Numerical summaries </mark>
 
-![](./pict/univsummrstat1.png) 
+![](./pict/univsummrstat1.png)
 
+-   In the dialogue window that opens up, select all variables you want
+    to summarize.
 
-- In the dialogue window that opens up, select all variables you want to summarize.
+![](./pict/numericsumr1.png)
 
-![](./pict/numericsumr1.png) 
-
-- Click on the statistics tab and ensure that Mean, Standard Deviation, and Quantiles are checked.
+-   Click on the statistics tab and ensure that Mean, Standard
+    Deviation, and Quantiles are checked.
 
 ![](./pict/numericsummrcmdr1.png)
 
--   Calculate summary statistics of numeric variables "age", "new_diffdatenm" in RStudio.
+-   Calculate summary statistics of numeric variables "age",
+    "new_diffdatenm" in RStudio.
 
 ```{r}
 numSummary(leptodbfinal[,c("age", "new_diffdatenm"), drop=FALSE], statistics=c("mean", "sd", "quantiles"), quantiles=c(0,.25,.5,.75,1))
@@ -552,7 +552,8 @@ t.test(age ~ status, data = leptodbfinal)
 
 -   Using Rcmdr point-and-click:
 
-<mark> Statistics -\> Proportions -\> Two-sample proportions test </mark>
+<mark> Statistics -\> Proportions -\> Two-sample proportions test
+</mark>
 
 ![](./pict/bivariatercmdr.png)
 
@@ -596,7 +597,6 @@ leptodbfinal$statusn <- ifelse(leptodbfinal$status == "Case", 1, 0)
 
 <mark> Statistics -\> Fit models -\> Generalized linear models </mark>
 
-
 ![](./pict/bivariateODDSrcmdr.png)
 
 -   In the left side of the model insert: status
@@ -604,7 +604,6 @@ leptodbfinal$statusn <- ifelse(leptodbfinal$status == "Case", 1, 0)
 -   Select in the response variable: new_cookedchicken
 
 -   Ensure that binomial and logit are selected
-
 
 ![](./pict/CalculateODDratio.png)
 
@@ -614,20 +613,13 @@ leptodbfinal$statusn <- ifelse(leptodbfinal$status == "Case", 1, 0)
 
 -   Next get confidence intervals for our outputs
 
-![](./pict/bivariateODDSGLMCI95rcmdr.png) 
+![](./pict/bivariateODDSGLMCI95rcmdr.png)
 
-
-
-
-- In the window you should select
-
-
-
+-   In the window you should select
 
 ![](./pict/bivariateODDSGLMCI95rcmdr1.png)
 
-- You get results:
-
+-   You get results:
 
 ![](./pict/CI95ODDsRatio.png)
 
@@ -648,12 +640,10 @@ exp(coef(GLMOR))
 Confint(GLMOR, level=0.95, type="LR", exponentiate=TRUE)
 ```
 
-
-
 # Descriptive analysis and distribution of symptoms of Leptospirosis in the outbreak data.
 
-- Codes for R to create complex nice looking tables using **GTsummary** package. 
-
+-   Codes for R to create complex nice looking tables using
+    **GTsummary** package.
 
 ```{r tables, echo = params$echoftr}
 
@@ -748,24 +738,21 @@ Kazakhstan, July-August 2004.
 symptoms during outbreak of Kenkolat, Kazakhstan, July-August 2004.
 (Interval 1 day).
 
+# Create plots/Histogram **Epicurve** in R commaneder and R using **ggplot** packages
 
-# Create plots/Histogram **Epicurve** in R commaneder and R using **ggplot** packages 
-
-- Create histogram using R commander
+-   Create histogram using R commander
 
 ![](./pict/histogramrcmdr.png)
 
-- Select **dateofsymptoms** variable to create histogram
+-   Select **dateofsymptoms** variable to create histogram
 
 ![](./pict/bargrprcmdr.png)
 
-- Create histogram in R Commander.
-
+-   Create histogram in R Commander.
 
 ![](./pict/histogram.png)
 
-- Create histogram using R code.
-
+-   Create histogram using R code.
 
 ```{r plot2, echo = params$echoftr, warning=params$warnftr, out.width = '100%'}
 plot2 <- Leptospcasen %>% 
@@ -802,10 +789,11 @@ outbreak of Leptospirosis.
 **Answer 4.1** Risk Ratios should be calculated for variabels considered
 as possible risk factors.
 
-**Results of twobytwo table for variable regarding the use of river water**
+**Results of twobytwo table for variable regarding the use of river
+water**
 
-- You can use same calcualtions to calculate other risk factors or add variables direcltly into the multivariate model.
-
+-   You can use same calcualtions to calculate other risk factors or add
+    variables direcltly into the multivariate model.
 
 ```{r OR, echo = params$echoftr, warning=params$warnftr}
 
@@ -853,7 +841,6 @@ leptodbfinal %>%
   bold_labels()   
 
 ```
-
 
 **Instructor’s Note:** Additional judgement and information for
 instructors to take into account for training.
@@ -952,17 +939,17 @@ study to gather more specific data about the possible causes of this
 outbreak. Based on the descriptive epidemiology, develop a hypothesis
 that can be tested in a case control study. Explain your reasoning.
 
-**Answer 7:** The strongest information is the time distribution which can
-only be interpreted as exposure during a very narrow time window (July
-26 and 27). The continuous rainfall during the last week of July would
-have set up favorable conditions for contamination of existing water
-sources for drinking, general household use, and swimming. Supporting
-this hypothesis is the proximity in space these water sources to a
-complex of cattle corrals and to a large cluster of cases. Moreover, the
-corrals were upslope from the water sources and would have drained the
-excess rainfall into the water sources. The age and sex distribution
-suggests widespread exposure that would be consistent with, but not
-indicative of a waterborne outbreak.
+**Answer 7:** The strongest information is the time distribution which
+can only be interpreted as exposure during a very narrow time window
+(July 26 and 27). The continuous rainfall during the last week of July
+would have set up favorable conditions for contamination of existing
+water sources for drinking, general household use, and swimming.
+Supporting this hypothesis is the proximity in space these water sources
+to a complex of cattle corrals and to a large cluster of cases.
+Moreover, the corrals were upslope from the water sources and would have
+drained the excess rainfall into the water sources. The age and sex
+distribution suggests widespread exposure that would be consistent with,
+but not indicative of a waterborne outbreak.
 
 Accordingly, the hypothesis would be: “A point source outbreak of
 leptospirosis among residents of Kenkolat from August 1 to 17 resulted
@@ -1031,11 +1018,11 @@ leptospirosis. Interim measures could include:
 -   Reroute any water runoff channels from the animal corral complex to
     a point downstream from the village
 
-Investigators and Supervisors from Central Asia Field Epidemiology Training Program:
+Investigators and Supervisors from Central Asia Field Epidemiology
+Training Program:
 
 -   G. Aumoldaeva
 -   A. Turcunbaeva
 -   S. M. Ajeilat
 -   M. O. Favorov
 -   D. Nabirova
-
