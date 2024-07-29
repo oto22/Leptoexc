@@ -364,7 +364,9 @@ variable</mark>
 -   In the new variable calcuation window we need to write formula to
     calculate difference
 
-![](./pict/substractdatesrcmdr1.png) - R code to calculate difference
+![](./pict/substractdatesrcmdr1.png) 
+
+- R code to calculate difference
 between two dates. - Use function **difftime** to calculate difference
 of **days** between two dates. - Date should be in **ISO** or **Date**
 format to calculate using **difftime**.
