@@ -217,7 +217,7 @@ In the dialogue window that opens:
 
 ```{r importdatalepto, echo = params$echoftr}
 ## Import data from excel file.
-df <- read_xlsx("../data/LeptospDBclean.xlsx",  sheet = "LeptoDB", na = "NA")  
+df <- read_xlsx("data/LeptospDBclean.xlsx",  sheet = "LeptoDB", na = "NA")  
 ```
 
 ### check the names of variables in your file.
@@ -436,7 +436,7 @@ In the next dialogue window that opens up, type in the new file name
 
 ```{r writetable}
 ## export data into csv
-write.table(leptodbfinal, "../output/leptospirosis_clean.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=TRUE, na="NA")
+write.table(leptodbfinal, "output/leptospirosis_clean.csv", sep=",", col.names=TRUE, row.names=FALSE, quote=TRUE, na="NA")
 ```
 
 ## Subset data for Cases only
