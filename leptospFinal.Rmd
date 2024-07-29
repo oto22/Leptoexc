@@ -204,14 +204,14 @@ And the dialog box opens.
 
 In the dialogue window that opens:
 
--   Enter name for dataset: leptodb
+-   Enter name for data set: leptodb
 -   Convert character variables to factors: Uncheck
 -   Missing: NA
 -   Field separator: Select commas [,]
 -   Decimal-point character: [.]
 -   Click OK
 
-![](./pict/importrcmd1.png)
+![](./pict/importrcmdexcell.png)
 
 **Import data using R code.**
 
@@ -220,87 +220,137 @@ In the dialogue window that opens:
 df <- read_xlsx("data/LeptospDBclean.xlsx",  sheet = "LeptoDB", na = "NA")  
 ```
 
-### check the names of variables in your file.
+### Check the names of variables in the data set.
 
 **Using Rcmdr point-and-click:**
 
-<mark> Data -\> Active datasets -\> Variables in active dataset </mark>
+<mark>Data -> Active data sets -> Variables in active data set</mark>
 
 ![](./pict/wievnamesrcmdr.png)
 
 **Using R code :**
 
 ```{r}
-## select all necessary variables from dataset
+## Check names of variables in the data set
 names(df) 
 ```
 
-### Delete variables form dataset
+### Delete variables form data set.
 
--   In R commander you should use following menu:
+**Using Rcmdr point-and-click:**
 
-<mark> Data -\> Manage variables in active dataset -\> Delete variables
-in active dataset </mark>
+<mark>Data -> Manage variables in active data set -> Delete variables in active data set</mark>
 
-![](./pict/deletevarrcmdr.png) - Then you need to select variable names
-in the window to delete - Click Ok - Your selected variables are
-deleted.
+![](./pict/deletevarrcmdr.png) 
 
-![](./pict/deletevarrcmdr1.png)
 
--   Delete variables code in R:
+- Then you need to select variable names in the window to delete. 
+
+
+![](./pict/deleteselectedvars.png)
+
+
+- Click Ok. 
+- Your selected variables are deleted.
+
+
+**Using R code:**
 
 ```{r}
-leptodbfinal <- df %>% 
+## Delete variables
+df <- df %>% 
   select(-c(calfmusc, eyered, lappet, mregdt, liveren, livrtnd, mcpbldlp))
 ```
 
-### View the summary of your dataset?
+### View the summary of your data set.
 
-<mark> Statistics -\> Summaries -\> Active dataset </mark>
+**Using Rcmdr point-and-click:**
+
+<mark>Statistics -> Summaries -> Active data set.</mark>
 
 ![](./pict/summaryrcmdr.png)
 
+
+**Using R code:**
+
 ```{r}
-##  see the summary statistics of dataset 
-summary(leptodbfinal)
+##  see the summary statistics of data set. 
+summary(df)
 ```
 
-### Count missing observations
+
+### Rename the data set and sort it by id.
+
+**Using Rcmdr point-and-click:**
+
+<mark>Statistics -> Active data set -> Sort active data set.</mark>
+
+
+![](./pict/sortandreanemnewdb0.png) 
+
+
+
+![](./pict/sortandreanemnewdb.png)
+
+
+**Using R code:**
+
+```{r}
+## Rename the data set and sort it by id.
+
+leptodbfinal <- df[order(df$id),]
+
+```
+
+
+### Count missing observations fro all variables in data set.
+
+**Using Rcmdr point-and-click:**
+
 
 ![](./pict/missingcountrcmdr.png)
 
+**Using R code:**
+
 ```{r}
-# check numver of missing values in for each variables
+# check numver of missing values in for each variables.
 colSums(is.na(leptodbfinal))
 ```
 
 ### Recode variables with missing values (NA) to 0:
 
-<mark> Data -\> Manage variables in active dataset -\> Recode variables
-</mark>
+**Using Rcmdr point-and-click:**
+
+<mark>Data -> Manage variables in active data set -> Recode variables</mark>
 
 ![](./pict/recodeNArcmdr.png)
 
-- in the recode variables window add appropirate 
+- in the recode variables window select variables you wont to recede and in the code write **`NA=0`** 
+
+![](./pict/recodenewvarsrcmdr.png)
+
+**Using R code:**
 
 
 ```{r}
-## replace all NA values to 0
+## replace all NA values to 0 for sleected variables
 leptodbfinal <- leptodbfinal %>% 
-  mutate_if(is.numeric, ~replace_na(., 0)) 
-## glimpse and summary
-glimpse(leptodbfinal)
-summary(leptodbfinal)
+  #mutate_if(is.numeric, ~replace_na(., 0)) 
+  mutate_at(c("contactwithillpersons", "contactsheepaug6", "contactpigaug6", "contacthoarseaug6",
+              "contactgoataug6", "contactdogaug6", "contactcowaug6", "contactcataug6"),  ~replace_na(., 0)) 
 ```
+
+
 
 ### Recode variables from numeric to factor:
 
-<mark> Data -\> Manage variables in active dataset -\> Convert numeric
-variables to factors </mark>
+**Using Rcmdr point-and-click:**
 
-![](./pict/recodercmdr1.png) 
 
+<mark>Data -> Manage variables in active data set -> Convert numeric variables to factors</mark>
+
+
+![](./pict/convernumtocatrcmdr.png) 
 
 - In the dialogue window that opens up,
 select the above variables (hold the “shift” button to select more than
@@ -310,39 +360,48 @@ one).
 
 -   Click OK
 
+
+![](./pict/convernumtocatrcmdr1.png) 
+
+**Using R code:**
+
+
 ```{r}
 leptodbfinal <- leptodbfinal %>% 
   mutate_if(is.numeric, as.factor)
 ```
 
+
+
 ### Convert variable to date
 
-Some variables in the dataset are shown as character but they are
+Some variables in the data set are shown as character but they are
 actually date variables.
 
 This is the case for variables “dateonset”, “datediagnosis”
 
-Using Rcmdr point-and-click:
+**Using Rcmdr point-and-click:**
 
-<mark> Data -\> Manage variables in active dataset -\> Compute new
-variable </mark>
+<mark>Data -> Manage variables in active data set -> Compute new variable</mark>
 
 ![](./pict/convernumtodatercmdr.png)
 
--When you clikc it the new dialogue window pops up
+-When you click it the new dialogue window pops up
 
--Type the new variable name: new_datediagnosis
+-Type the new variable name: `new_datediagnosis`
 
--In expression to compute type: as.Date(datediagnosis)
+-In expression to compute type: `as.Date(datediagnosis)`
 
 -Click OK
 
-You have now created a new date type variable called “new_datediagnosis”
+You have now created a new date type variable called `new_datediagnosis`
 
 You can repeat this same step to create the date variable
 “new_dateonset” from variable "dateofsymptoms"
 
-![](./pict/convernumtodatercmdr1.png)
+![](./pict/convernumtodatercmdr1.png) 
+
+**Using R code:**
 
 ```{r}
 leptodbfinal <- leptodbfinal %>% 
@@ -356,7 +415,7 @@ leptodbfinal <- leptodbfinal %>%
     onset to detect the delay between diagnosis and onset of disease.
 -   In R commander we need to got to following menu:
 
-<mark>Data -\> Manage variables in active dataset -\> Compute new
+<mark>Data -\> Manage variables in active data set -\> Compute new
 variable</mark>
 
 ![](./pict/substractdatesrcmdr.png)
@@ -384,7 +443,7 @@ head(leptodbfinal[,c("new_datediagnosis", "new_dateonset","new_diffdate", "new_d
 
 Using Rcmdr point-and-click:
 
-Data -\> Manage variables in active dataset -\> Recode variables
+Data -\> Manage variables in active data set -\> Recode variables
 
 ![](./pict/createcatvarfromumrcmdr.png)
 
@@ -407,24 +466,24 @@ leptodbfinal <- leptodbfinal %>%
   agegr = cut(age, breaks = c(9,39,70), labels = c("10-39",  "40-70")))
 ```
 
-## Refresh active dataset
+## Refresh active data set
 
 In Rcmdr after you create new variables you need to refresh.
 
 Using Rcmdr point-and-click:
 
-<mark> Data -\> Active dataset -\> Refresh active dataset </mark>
+<mark> Data -\> Active data set -\> Refresh active data set </mark>
 
 ![](./pict/refreshrcmdrdatset.png)
 
 **This is only for R commander, RStudio does not require to refresh
-active dataset.**
+active data set.**
 
 ## Save and export data into csv format
 
 For R Commander:
 
-<mark>Data -\> Active dataset -\> Export active dataset</mark>
+<mark>Data -\> Active data set -\> Export active data set</mark>
 
 ![](./pict/savedtrcmdr1.png) -- Open the window and indicate several
 paramaters: - In the dialogue window that opens up, uncheck write wrote
@@ -457,11 +516,11 @@ Leptospcasen <- leptodbfinal %>% filter(status == "Case")
 ## N of cases
 
 -   In R commander.
--   Activate **Leptospcasen** dataset.
+-   Activate **Leptospcasen** data set.
 -   Open **Compute new variable** window to count N of cases in the
-    dataset.
+    data set.
 
-<mark>Data -\> Manage variables in active dataset -\> Compute new
+<mark>Data -\> Manage variables in active data set -\> Compute new
 variable</mark>
 
 ![](./pict/substractdatesrcmdr.png)
